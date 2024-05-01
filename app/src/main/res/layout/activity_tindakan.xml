@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".presentation.laporan.TindakanActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            app:backgroundTint="@android:color/transparent"
+            app:icon="@drawable/ic_arrow_back"
+            app:iconSize="25dp"
+            app:iconTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/tv_tindakan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_tindakan" />
+
+        <TextView
+            android:id="@+id/tv_tindakan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Tindakan Korupsi" />
+
+        <TextView
+            android:id="@+id/tv_laporan_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins"
+            android:paddingHorizontal="30dp"
+            android:text="@string/tindak_pidana"
+            android:textAlignment="center"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_tindakan" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_bukti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="30dp"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_laporan_info">
+
+            <ImageView
+                android:id="@+id/iv_bukti"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:contentDescription="@null"/>
+
+            <LinearLayout
+                android:id="@+id/layout_unggah"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="30dp">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:contentDescription="@string/ic_cloud"
+                    android:src="@drawable/ic_cloud" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/upload_bukti"
+                    android:textAlignment="center" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_unggah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/unggah"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:backgroundTint="@color/blue" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_pihak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:textSize="16sp"
+            android:text="@string/pihak_yang_diduga_terlibat"
+            android:fontFamily="@font/poppins_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cv_bukti" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            app:boxBackgroundMode="filled"
+            app:layout_constraintTop_toBottomOf="@id/tv_pihak">
+
+            <EditText
+                android:id="@+id/et_nama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:hint="@string/nama_lengkap"
+                android:inputType="textPersonName" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_jabatan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            app:boxBackgroundMode="filled"
+            app:layout_constraintTop_toBottomOf="@id/tl_nama">
+
+            <EditText
+                android:id="@+id/et_jabatan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:hint="@string/jabatan"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_tanggal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            app:boxBackgroundMode="filled"
+            app:layout_constraintTop_toBottomOf="@id/tl_jabatan">
+
+            <EditText
+                android:id="@+id/et_tanggal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:hint="@string/tanggal"
+                android:inputType="date" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_waktu_perkiraan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            app:boxBackgroundMode="filled"
+            app:layout_constraintTop_toBottomOf="@id/tl_tanggal">
+
+            <EditText
+                android:id="@+id/et_waktu_perkiraan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:hint="@string/waktu_perkiraan"
+                android:inputType="time" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_deskripsi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="20dp"
+            android:textSize="16sp"
+            android:text="@string/deskripsi_pelanggaran"
+            android:fontFamily="@font/poppins_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tl_waktu_perkiraan" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_deskripsi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            app:boxBackgroundMode="filled"
+            app:layout_constraintTop_toBottomOf="@id/tv_deskripsi">
+
+            <EditText
+                android:id="@+id/et_deskripsi_pelanggaran"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:hint="@string/uraikan_pelanggaran"
+                android:inputType="textLongMessage" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_pengadu_anonymous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="20dp"
+            android:textSize="16sp"
+            android:text="@string/pengadu_anonymous"
+            android:fontFamily="@font/poppins_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tl_deskripsi" />
+
+        <CheckBox
+            android:id="@+id/cb_anonymous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_pengadu_anonymous"
+            app:layout_constraintStart_toStartOf="@id/tv_pengadu_anonymous"
+            android:text="@string/kirim_sebagai_anonymous"
+            android:fontFamily="@font/poppins"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_line_bottom"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.85" />
+
+        <View
+            android:id="@+id/line_grey"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@id/cb_anonymous" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_unggah_laporan"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="30dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/unggah_laporan"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:backgroundTint="@color/blue"
+            android:layout_marginVertical="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_grey" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".presentation.laporan.LaporanActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            app:backgroundTint="@android:color/transparent"
+            app:icon="@drawable/ic_arrow_back"
+            app:iconSize="25dp"
+            app:iconTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/tv_laporan_pelanggaran"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_laporan_pelanggaran" />
+
+        <TextView
+            android:id="@+id/tv_laporan_pelanggaran"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/laporan_pelanggaran"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_laporan_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins"
+            android:paddingHorizontal="50dp"
+            android:text="@string/laporan_info"
+            android:textAlignment="center"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_laporan_pelanggaran" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_tindakan_korupsi"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="start|center_vertical"
+            android:text="@string/tindakan_korupsi"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:backgroundTint="@color/light_gray"
+            app:cornerRadius="10dp"
+            app:elevation="10dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_laporan_info" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_pengelolaan_keuangan"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="start|center_vertical"
+            android:text="@string/pengelolaan_keuangan"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:backgroundTint="@color/light_gray"
+            app:cornerRadius="10dp"
+            app:elevation="10dp"
+            app:layout_constraintTop_toBottomOf="@id/btn_tindakan_korupsi" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_pelanggaran_kepegawaian"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="start|center_vertical"
+            android:text="@string/pelanggaran_kepegawaian"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:backgroundTint="@color/light_gray"
+            app:cornerRadius="10dp"
+            app:elevation="10dp"
+            app:layout_constraintTop_toBottomOf="@id/btn_pengelolaan_keuangan" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_pengadaan"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="start|center_vertical"
+            android:text="@string/pengadaan_barang_dan_jasa"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:backgroundTint="@color/light_gray"
+            app:cornerRadius="10dp"
+            app:elevation="10dp"
+            app:layout_constraintTop_toBottomOf="@id/btn_pelanggaran_kepegawaian" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_penyalahgunaan_wewenang"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="start|center_vertical"
+            android:text="@string/penyalahgunaan_wewenang_s"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:backgroundTint="@color/light_gray"
+            app:cornerRadius="10dp"
+            app:elevation="10dp"
+            app:layout_constraintTop_toBottomOf="@id/btn_pengadaan" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_daftar_laporan"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="30dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/daftar"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:backgroundTint="@color/blue"
+            app:layout_constraintTop_toBottomOf="@id/btn_penyalahgunaan_wewenang"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

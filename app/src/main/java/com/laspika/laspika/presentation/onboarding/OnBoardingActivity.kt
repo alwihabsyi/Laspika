@@ -14,8 +14,8 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.get
 import androidx.viewpager2.widget.ViewPager2
 import com.laspika.laspika.R
-import com.laspika.laspika.adapter.OnBoardingAdapter
-import com.laspika.laspika.adapter.OnBoardingItem
+import com.laspika.laspika.presentation.onboarding.adapter.OnBoardingAdapter
+import com.laspika.laspika.presentation.onboarding.adapter.OnBoardingItem
 import com.laspika.laspika.databinding.ActivityOnBoardingBinding
 import com.laspika.laspika.presentation.auth.AuthActivity
 
@@ -53,7 +53,7 @@ class OnBoardingActivity : AppCompatActivity() {
         binding.btnLewati.setOnClickListener {
             val intent = Intent(this@OnBoardingActivity, AuthActivity::class.java)
             startActivity(intent)
-//            onBoardingFinished()
+            onBoardingFinished()
             finish()
         }
 
@@ -63,7 +63,7 @@ class OnBoardingActivity : AppCompatActivity() {
             } else {
                 val intent = Intent(this, AuthActivity::class.java)
                 startActivity(intent)
-//                onBoardingFinished()
+                onBoardingFinished()
                 finish()
             }
         }

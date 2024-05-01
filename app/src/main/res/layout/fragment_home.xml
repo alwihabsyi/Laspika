@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/homeFragment"
+    android:fillViewport="true"
+    tools:context=".presentation.home.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="30dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageView"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@color/blue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/profile"
+            app:layout_constraintBottom_toBottomOf="@+id/circleImageView"
+            app:layout_constraintEnd_toEndOf="@+id/circleImageView"
+            app:layout_constraintStart_toStartOf="@+id/circleImageView"
+            app:layout_constraintTop_toTopOf="@+id/circleImageView"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tv_hello_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/hai_dela_amaliya"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/circleImageView"
+            app:layout_constraintStart_toEndOf="@id/circleImageView"
+            app:layout_constraintTop_toTopOf="@id/circleImageView" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_report"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/laporkan_pelanggaran"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:backgroundTint="@color/blue"
+            app:cornerRadius="15dp"
+            app:layout_constraintTop_toBottomOf="@id/circleImageView" />
+
+        <TextView
+            android:id="@+id/tv_informasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/informasi"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_report" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_informasi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            app:cardBackgroundColor="@color/blue"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_informasi">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/informasi_spi_home"
+                android:textAlignment="center" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_kategori"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/kategori_pelanggaran"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cv_informasi" />
+
+        <RadioGroup
+            android:id="@+id/rg_1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/tv_kategori">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_tindakan_korupsi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tindakan_korupsi"
+                app:buttonTint="@color/light_red" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_pengelolaan_keuangan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/pengelolaan_keuangan"
+                app:buttonTint="@color/light_red" />
+        </RadioGroup>
+
+        <View
+            android:id="@+id/line_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@+id/rg_1" />
+
+        <LinearLayout
+            android:id="@+id/rg_2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/line_1">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_pengadaan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/pengadaan_nbarang_dan_jasa"
+                app:buttonTint="@color/light_red" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_pelanggaran"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/pelanggaran_kepegawaian"
+                app:buttonTint="@color/light_red" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line_2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@+id/rg_2" />
+
+        <RadioGroup
+            android:id="@+id/rg_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/line_2">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_penyalahgunaan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/penyalahgunaan_wewenang"
+                app:buttonTint="@color/light_red" />
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

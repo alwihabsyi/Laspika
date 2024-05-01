@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/homeFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/notificationFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_notification"
+        android:title="@string/notification"
+        app:showAsAction="ifRoom" />
+    <item
+        android:enabled="false"
+        app:showAsAction="never"
+        android:title="@string/empty" />
+    <item
+        android:id="@+id/historyFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_riwayat"
+        android:title="@string/riwayat"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/profileFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_user"
+        android:title="@string/akun"
+        app:showAsAction="ifRoom" />
+</menu>
