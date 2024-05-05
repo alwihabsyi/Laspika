@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".presentation.MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_layout"
@@ -41,13 +41,14 @@
         app:menu="@menu/bottom_menu" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_jadwal_imunisasi"
+        android:id="@+id/btn_lapor"
         style="@style/Widget.MaterialComponents.FloatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/blue"
+        android:clickable="false"
         android:contentDescription="@null"
-        android:elevation="10dp"
+        android:focusable="false"
         android:src="@drawable/ic_add"
         app:layout_anchor="@id/menuBottom"
         app:tint="@color/white" />

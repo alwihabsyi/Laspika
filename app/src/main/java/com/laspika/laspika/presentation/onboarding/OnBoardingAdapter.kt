@@ -1,4 +1,4 @@
-package com.laspika.laspika.presentation.onboarding.adapter
+package com.laspika.laspika.presentation.onboarding
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater

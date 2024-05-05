@@ -133,12 +133,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
-                android:hint="Masukkan Konfirmasi Kata Sandi"
+                android:hint="@string/masukkan_konfirmasi_kata_sandi"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginHorizontal="30dp"
@@ -157,7 +157,7 @@
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_login">
+            app:layout_constraintTop_toBottomOf="@id/btn_register">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -175,6 +175,18 @@
                 android:text="@string/masuk"
                 android:textColor="@color/blue_link" />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@color/black30">
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="@color/white"/>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

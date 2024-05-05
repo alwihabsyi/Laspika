@@ -2,7 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
+        android:name=".LaspikaApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -12,8 +16,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Laspika"
         tools:targetApi="31">
+        <service
+            android:name=".core.notification.MessagingService"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
         <activity
-            android:name=".presentation.laporan.TindakanActivity"
+            android:name=".presentation.profile.ProfileDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.detail.ReportDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.laporan.LaporanResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.tindakan.TindakanActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.laporan.LaporanActivity"
@@ -34,7 +55,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.MainActivity"
             android:exported="false" />
     </application>
 

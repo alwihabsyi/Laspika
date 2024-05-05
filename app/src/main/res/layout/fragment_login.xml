@@ -125,4 +125,16 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="@color/black30">
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/white"/>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

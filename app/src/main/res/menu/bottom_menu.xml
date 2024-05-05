@@ -14,7 +14,8 @@
         android:title="@string/notification"
         app:showAsAction="ifRoom" />
     <item
-        android:enabled="false"
+        android:id="@+id/toLaporan"
+        android:enabled="true"
         app:showAsAction="never"
         android:title="@string/empty" />
     <item

@@ -14,8 +14,6 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.get
 import androidx.viewpager2.widget.ViewPager2
 import com.laspika.laspika.R
-import com.laspika.laspika.presentation.onboarding.adapter.OnBoardingAdapter
-import com.laspika.laspika.presentation.onboarding.adapter.OnBoardingItem
 import com.laspika.laspika.databinding.ActivityOnBoardingBinding
 import com.laspika.laspika.presentation.auth.AuthActivity
 
@@ -150,6 +148,19 @@ class OnBoardingActivity : AppCompatActivity() {
         val editor = sharedPref.edit()
         editor.putBoolean("OnBoarding", true)
         editor.apply()
+    }
+
+    private fun isOnBoardingFinished(): Boolean {
+        val sharedPref = getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+        return sharedPref.getBoolean("OnBoarding", false)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if (isOnBoardingFinished()) {
+            startActivity(Intent(this, AuthActivity::class.java))
+            finish()
+        }
     }
 
     override fun onDestroy() {

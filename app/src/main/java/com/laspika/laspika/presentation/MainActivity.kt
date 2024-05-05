@@ -1,6 +1,8 @@
-package com.laspika.laspika
+package com.laspika.laspika.presentation
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -8,7 +10,9 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.laspika.laspika.R
 import com.laspika.laspika.databinding.ActivityMainBinding
+import com.laspika.laspika.presentation.laporan.LaporanActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,11 +34,30 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigationView.background = null
         val navHostFragment = supportFragmentManager.findFragmentById(binding.fragmentLayout.id) as NavHostFragment
         navController = navHostFragment.navController
+
         binding.bottomNavigationView.setupWithNavController(navController)
+        binding.bottomNavigationView.selectedItemId = R.id.homeFragment
+
+        intent.getStringExtra(FRAGMENT)?.let {
+            when (it) {
+                "history" -> {
+                    binding.bottomNavigationView.selectedItemId = R.id.historyFragment
+                    intent.removeExtra(FRAGMENT)
+                }
+            }
+        }
+
+        findViewById<View>(R.id.toLaporan).setOnClickListener {
+            startActivity(Intent(this, LaporanActivity::class.java))
+        }
     }
 
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    companion object {
+        const val FRAGMENT = "fragment"
     }
 }
