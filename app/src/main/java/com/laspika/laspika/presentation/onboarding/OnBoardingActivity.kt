@@ -49,20 +49,22 @@ class OnBoardingActivity : AppCompatActivity() {
         })
 
         binding.btnLewati.setOnClickListener {
-            val intent = Intent(this@OnBoardingActivity, AuthActivity::class.java)
-            startActivity(intent)
             onBoardingFinished()
-            finish()
+            val intent = Intent(this@OnBoardingActivity, AuthActivity::class.java)
+            startActivity(intent.apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            })
         }
 
         binding.btnLanjut.setOnClickListener {
             if (binding.viewPager2.currentItem + 1 < onBoardingAdapter.itemCount) {
                 binding.viewPager2.currentItem += 1
             } else {
-                val intent = Intent(this, AuthActivity::class.java)
-                startActivity(intent)
                 onBoardingFinished()
-                finish()
+                val intent = Intent(this, AuthActivity::class.java)
+                startActivity(intent.apply {
+                    flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                })
             }
         }
     }

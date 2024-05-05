@@ -47,7 +47,8 @@ class TindakanViewModel(
             }
 
             val reportDataUpdated = reportData.copy(
-                dokumenUrl = document
+                dokumenUrl = document,
+                uid = auth.currentUser!!.uid
             )
             sendReport(reportDataUpdated)
         }

@@ -87,4 +87,5 @@
     <string name="password">Password</string>
     <string name="pw">*******</string>
     <string name="simpan">Simpan</string>
+    <string name="lupa_sandi">Lupa Sandi?</string>
 </resources>

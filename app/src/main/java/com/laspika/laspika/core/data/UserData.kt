@@ -9,5 +9,6 @@ data class UserData (
     val nama: String? = null,
     val email: String? = null,
     val phone: String? = null,
-    val photoUrl: String? = null
+    val photoUrl: String? = null,
+    val admin: Boolean? = false
 ): Parcelable

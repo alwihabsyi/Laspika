@@ -18,5 +18,6 @@ data class ReportData (
     val jenisDokumen: String? = null,
     val namaPelapor: String? = null,
     val anonymous: Boolean? = false,
-    val status: String? = Constants.PENDING
+    val status: String? = Constants.PENDING,
+    val uid: String? = null
 ): Parcelable

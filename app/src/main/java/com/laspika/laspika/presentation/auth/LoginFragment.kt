@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.laspika.laspika.R
 import com.laspika.laspika.core.utils.UiState
 import com.laspika.laspika.core.utils.hide
+import com.laspika.laspika.core.utils.setUpForgotPasswordDialog
 import com.laspika.laspika.core.utils.show
 import com.laspika.laspika.core.utils.toast
 import com.laspika.laspika.databinding.FragmentLoginBinding
@@ -56,6 +57,21 @@ class LoginFragment : Fragment() {
                 }
             }
         }
+
+        viewModel.resetPasswordState.observe(viewLifecycleOwner) {
+            when (it) {
+                is UiState.Loading -> {
+                    if (it.isLoading == true) binding.progressBar.show()
+                    else binding.progressBar.hide()
+                }
+                is UiState.Success -> {
+                    toast(it.data!!)
+                }
+                is UiState.Error -> {
+                    toast(it.error!!)
+                }
+            }
+        }
     }
 
     private fun setActions() {
@@ -74,6 +90,12 @@ class LoginFragment : Fragment() {
                 }
 
                 viewModel.signIn(email, password)
+            }
+
+            tvForgotPassword.setOnClickListener {
+                setUpForgotPasswordDialog { email ->
+                    viewModel.resetPassword(email)
+                }
             }
         }
     }
